@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+'use strict';
+const { Command } = require('commander');
+const exportCmd = require('../lib/commands/export');
+const importCmd = require('../lib/commands/import');
+
+const program = new Command();
+
+program.addCommand(exportCmd);
+program.addCommand(importCmd);
+
+program
+  .version('0.1.0', '-v, --version', 'output the current version')
+  .description('Truffle Deployments Command Line Interface')
+  .parse(process.argv);

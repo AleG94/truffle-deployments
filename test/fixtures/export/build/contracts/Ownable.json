@@ -1,0 +1,17 @@
+{
+  "contractName": "Ownable",
+  "networks": {
+    "1": {
+      "events": {},
+      "links": {},
+      "address": "0x650F0003fBfc496Ed222Fdca33b19F9FcEAF326e",
+      "transactionHash": "0x5559fbb881b502397078d0f632bc50a77b80e36a826dc0b081ccd577b8cde9ce"
+    },
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x7e1ca7c76c62700d19b5cDBdcc0CA643C2dF1610",
+      "transactionHash": "0x3fa8fc33b569da383991cb595fe580ccbfd7e6a889ae9ef4e83c79a857b5dcbf"
+    }
+  }
+}

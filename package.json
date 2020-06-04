@@ -1,0 +1,44 @@
+{
+  "name": "truffle-deployments",
+  "version": "0.0.0",
+  "description": "Export deployed contract addresses from Truffle artifacts and store them separately.",
+  "main": "index.js",
+  "bin": {
+    "truffle-deployments": "./bin/truffle-deployments"
+  },
+  "scripts": {
+    "test": "mocha --file test/setup.js --recursive --exit",
+    "coverage": "nyc --all npm test",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --ignore-path .gitignore . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleG94/truffle-deployments.git"
+  },
+  "keywords": [
+    "truffle",
+    "contracts",
+    "artifacts",
+    "deployment"
+  ],
+  "author": "Alessandro Genovese",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AleG94/truffle-deployments/issues"
+  },
+  "homepage": "https://github.com/AleG94/truffle-deployments#readme",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "config": "^3.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.1.0",
+    "fs-extra": "^9.0.0",
+    "mocha": "^7.1.1",
+    "mocha-suppress-logs": "^0.1.0",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2"
+  }
+}
