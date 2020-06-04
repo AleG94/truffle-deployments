@@ -7,6 +7,12 @@
       "address": "0x650F0003fBfc496Ed222Fdca33b19F9FcEAF326e",
       "transactionHash": "0x5559fbb881b502397078d0f632bc50a77b80e36a826dc0b081ccd577b8cde9ce"
     },
+    "2": {
+      "events": {},
+      "links": {},
+      "address": "0xFe905B0a8938168eEB79D771c28822FC2c5d9E9E",
+      "transactionHash": "0xeb51fb88f26683ccc0a527936667c606b6f05e6d56d7a3dba759bd8678c3d74b"
+    },
     "4": {
       "events": {},
       "links": {},
