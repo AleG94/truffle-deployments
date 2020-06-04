@@ -81,6 +81,19 @@ module.exports = () => {
     output.should.be.deep.equal(networksData[networkToExport]);
   });
 
+  it('should export and reset old deployments', () => {
+    const networkToExport = 1;
+    const options = { networks: [networkToExport], reset: true };
+
+    exporter.export(ARTIFACTS_DIR, NETWORKS_DIR, options);
+
+    const networkPath = path.join(process.cwd(), NETWORKS_DIR, networkToExport + '.json');
+    const output = JSON.parse(fs.readFileSync(networkPath));
+    const networkData = networksData[networkToExport].filter(e => e.contract === 'Ownable');
+
+    output.should.be.deep.equal(networkData);
+  });
+
   it('should not export a non-deployed network', () => {
     const networkToExport = 0;
     const options = { networks: [networkToExport] };

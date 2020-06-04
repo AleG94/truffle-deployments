@@ -68,4 +68,28 @@ module.exports = () => {
 
     exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
   });
+
+  it('should export deleting old deployments (-r)', () => {
+    sinon.stub(exporter, 'export');
+
+    new Command()
+      .addCommand(exportCmd.build())
+      .parse(['node', 'test.js', 'export', '-r']);
+
+    const options = { networks: undefined, reset: true };
+
+    exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
+  });
+
+  it('should export deleting old deployments (--reset)', () => {
+    sinon.stub(exporter, 'export');
+
+    new Command()
+      .addCommand(exportCmd.build())
+      .parse(['node', 'test.js', 'export', '--reset']);
+
+    const options = { networks: undefined, reset: true };
+
+    exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
+  });
 };
