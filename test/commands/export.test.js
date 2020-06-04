@@ -39,6 +39,18 @@ module.exports = () => {
     exporter.export.calledWithMatch(artifactsDir, networksDir, options).should.be.true;
   });
 
+  it('should export a single network (-n)', () => {
+    sinon.stub(exporter, 'export');
+
+    const networkToExport = '4';
+
+    program.parse(['node', 'test.js', 'export', '-n', networkToExport]);
+
+    const options = { networks: [networkToExport] };
+
+    exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
+  });
+
   it('should export a single network (--network)', () => {
     sinon.stub(exporter, 'export');
 
