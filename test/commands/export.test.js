@@ -21,7 +21,7 @@ module.exports = () => {
       .addCommand(exportCmd.build())
       .parse(['node', 'test.js', 'export']);
 
-    const options = { networks: undefined };
+    const options = {};
 
     exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
   });
@@ -36,7 +36,7 @@ module.exports = () => {
       .addCommand(exportCmd.build())
       .parse(['node', 'test.js', 'export', artifactsDir, networksDir]);
 
-    const options = { networks: undefined };
+    const options = {};
 
     exporter.export.calledWithMatch(artifactsDir, networksDir, options).should.be.true;
   });
@@ -76,7 +76,7 @@ module.exports = () => {
       .addCommand(exportCmd.build())
       .parse(['node', 'test.js', 'export', '-r']);
 
-    const options = { networks: undefined, reset: true };
+    const options = { reset: true };
 
     exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
   });
@@ -88,7 +88,7 @@ module.exports = () => {
       .addCommand(exportCmd.build())
       .parse(['node', 'test.js', 'export', '--reset']);
 
-    const options = { networks: undefined, reset: true };
+    const options = { reset: true };
 
     exporter.export.calledWithMatch(DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR, options).should.be.true;
   });

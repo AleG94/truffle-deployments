@@ -21,7 +21,7 @@ module.exports = () => {
       .addCommand(importCmd.build())
       .parse(['node', 'test.js', 'import']);
 
-    const options = { networks: undefined };
+    const options = {};
 
     importer.import.calledWithMatch(DEFAULT_NETWORKS_DIR, DEFAULT_ARTIFACTS_DIR, options).should.be.true;
   });
@@ -36,7 +36,7 @@ module.exports = () => {
       .addCommand(importCmd.build())
       .parse(['node', 'test.js', 'import', networksDir, artifactsDir]);
 
-    const options = { networks: undefined };
+    const options = {};
 
     importer.import.calledWithMatch(networksDir, artifactsDir, options).should.be.true;
   });
