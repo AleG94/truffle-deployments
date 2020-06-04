@@ -9,6 +9,7 @@
   "scripts": {
     "test": "mocha --file test/setup.js --recursive --exit",
     "coverage": "nyc --all npm test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --ignore-path .gitignore . --fix"
   },
@@ -30,7 +31,8 @@
   "homepage": "https://github.com/AleG94/truffle-deployments#readme",
   "dependencies": {
     "commander": "^5.1.0",
-    "config": "^3.3.1"
+    "config": "^3.3.1",
+    "coveralls": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
