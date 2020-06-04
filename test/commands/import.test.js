@@ -12,14 +12,14 @@ const DEFAULT_ARTIFACTS_DIR = config.get('artifactsDir');
 const DEFAULT_NETWORKS_DIR = config.get('networksDir');
 
 module.exports = () => {
-  const program = new Command().addCommand(importCmd);
-
   afterEach(() => sinon.restore());
 
   it('should import with default dirs', () => {
     sinon.stub(importer, 'import');
 
-    program.parse(['node', 'test.js', 'import']);
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import']);
 
     const options = { networks: undefined };
 
@@ -32,7 +32,9 @@ module.exports = () => {
     const artifactsDir = 'custom-artifacts-dir';
     const networksDir = 'custom-networks-dir';
 
-    program.parse(['node', 'test.js', 'import', networksDir, artifactsDir]);
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import', networksDir, artifactsDir]);
 
     const options = { networks: undefined };
 
@@ -44,7 +46,9 @@ module.exports = () => {
 
     const networkToImport = '4';
 
-    program.parse(['node', 'test.js', 'import', '--network', networkToImport]);
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import', '--network', networkToImport]);
 
     const options = { networks: [networkToImport] };
 

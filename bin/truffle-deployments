@@ -7,8 +7,8 @@ const importCmd = require('../lib/commands/import');
 
 const program = new Command();
 
-program.addCommand(exportCmd);
-program.addCommand(importCmd);
+program.addCommand(exportCmd.build());
+program.addCommand(importCmd.build());
 
 program
   .version('0.1.0', '-v, --version', 'output the current version')
