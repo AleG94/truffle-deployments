@@ -1,15 +1,12 @@
 'use strict';
-const config = require('config');
 const chai = require('chai');
 const sinon = require('sinon');
 const { Command } = require('commander');
 const exportCmd = require('../../lib/commands/export');
 const exporter = require('../../lib/workers/exporter');
+const { DEFAULT_ARTIFACTS_DIR, DEFAULT_NETWORKS_DIR } = require('../../config/default');
 
 chai.should();
-
-const DEFAULT_ARTIFACTS_DIR = config.get('artifactsDir');
-const DEFAULT_NETWORKS_DIR = config.get('networksDir');
 
 module.exports = () => {
   afterEach(() => sinon.restore());
