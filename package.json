@@ -1,7 +1,7 @@
 {
   "name": "truffle-deployments",
   "version": "0.0.0",
-  "description": "Export deployed contract addresses from Truffle artifacts and store them separately.",
+  "description": "Export deployed contract addresses and store them separately from Truffle artifacts",
   "main": "index.js",
   "bin": {
     "truffle-deployments": "./bin/truffle-deployments"
