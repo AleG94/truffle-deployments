@@ -210,7 +210,7 @@ Running the `import` command will update `build/contracts/Token.json` like this:
 
 ## Programmable API
 
-Beside the Command Line Interface, Truffle Deployments can be imported and used programmatically.
+Beside the Command Line Interface, Truffle Deployments can also be used programmatically.
 
 ### Export deployments
 
