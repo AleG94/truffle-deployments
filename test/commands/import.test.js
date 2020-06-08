@@ -65,4 +65,32 @@ module.exports = () => {
 
     importer.import.calledWithMatch(DEFAULT_NETWORKS_DIR, DEFAULT_ARTIFACTS_DIR, options).should.be.true;
   });
+
+  it('should import multiple networks (-n)', () => {
+    sinon.stub(importer, 'import');
+
+    const networksToImport = ['1', '4'];
+
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import', '-n', networksToImport.join(',')]);
+
+    const options = { networks: networksToImport };
+
+    importer.import.calledWithMatch(DEFAULT_NETWORKS_DIR, DEFAULT_ARTIFACTS_DIR, options).should.be.true;
+  });
+
+  it('should import multiple networks (--network)', () => {
+    sinon.stub(importer, 'import');
+
+    const networksToImport = ['1', '4'];
+
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import', '--network', networksToImport.join(',')]);
+
+    const options = { networks: networksToImport };
+
+    importer.import.calledWithMatch(DEFAULT_NETWORKS_DIR, DEFAULT_ARTIFACTS_DIR, options).should.be.true;
+  });
 };
