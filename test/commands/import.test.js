@@ -38,6 +38,20 @@ module.exports = () => {
     importer.import.calledWithMatch(networksDir, artifactsDir, options).should.be.true;
   });
 
+  it('should import a single network (-n)', () => {
+    sinon.stub(importer, 'import');
+
+    const networkToImport = '4';
+
+    new Command()
+      .addCommand(importCmd.build())
+      .parse(['node', 'test.js', 'import', '-n', networkToImport]);
+
+    const options = { networks: [networkToImport] };
+
+    importer.import.calledWithMatch(DEFAULT_NETWORKS_DIR, DEFAULT_ARTIFACTS_DIR, options).should.be.true;
+  });
+
   it('should import a single network (--network)', () => {
     sinon.stub(importer, 'import');
 
