@@ -21,7 +21,8 @@
     "truffle",
     "contracts",
     "artifacts",
-    "deployment"
+    "deployments",
+    "networks"
   ],
   "author": "Alessandro Genovese",
   "license": "MIT",
