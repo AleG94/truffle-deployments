@@ -1,7 +1,10 @@
 # Truffle Deployments
 
-[![CircleCI](https://circleci.com/gh/AleG94/truffle-deployments.svg?style=svg)](https://circleci.com/gh/AleG94/truffle-deployments)
-[![Coverage Status](https://coveralls.io/repos/github/AleG94/truffle-deployments/badge.svg?branch=master)](https://coveralls.io/github/AleG94/truffle-deployments?branch=master)
+[![CircleCI][circleci-image]][circleci-url]
+[![NPM Version][npm-image]][npm-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![License][license-image]][license-url]
+
 
 Export deployed contract addresses and store them separately from Truffle artifacts.
 
@@ -232,3 +235,12 @@ const options = { networks: [4] };
 
 truffleDeployments.import(networksDir, artifactsDir, options);
 ```
+
+[circleci-image]: https://circleci.com/gh/AleG94/truffle-deployments.svg?style=svg
+[circleci-url]: https://circleci.com/gh/AleG94/truffle-deployments
+[coveralls-image]: https://coveralls.io/repos/github/AleG94/truffle-deployments/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/AleG94/truffle-deployments?branch=master
+[npm-image]: https://img.shields.io/npm/v/truffle-deployments.svg
+[npm-url]: https://npmjs.org/package/truffle-deployments
+[license-image]: https://img.shields.io/npm/l/truffle-deployments.svg
+[license-url]: https://github.com/AleG94/truffle-deployments/blob/master/LICENSE
