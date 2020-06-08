@@ -78,6 +78,17 @@ module.exports = () => {
     finalArtifact.should.be.deep.equal(initialArtifact);
   });
 
+  it('should not import any network when an empty networks array is provided', () => {
+    const initialArtifact = JSON.parse(fs.readFileSync(ARTIFACT_FILE_PATH));
+    const options = { networks: [] };
+
+    importer.import(ARTIFACTS_DIR, NETWORKS_DIR, options);
+
+    const finalArtifact = JSON.parse(fs.readFileSync(ARTIFACT_FILE_PATH));
+
+    finalArtifact.should.be.deep.equal(initialArtifact);
+  });
+
   it('should throw if networks directory is invalid', () => {
     const invalidNetworksPath = 'invalid/path';
 

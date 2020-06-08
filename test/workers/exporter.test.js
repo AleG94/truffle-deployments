@@ -105,6 +105,17 @@ module.exports = () => {
     fs.existsSync(networkPath).should.be.false;
   });
 
+  it('should not export any network when an empty networks array is provided', () => {
+    const options = { networks: [] };
+
+    exporter.export(ARTIFACTS_DIR, NETWORKS_DIR, options);
+
+    const existingNetwork = 4;
+    const existingNetworkPath = path.join(NETWORKS_DIR, existingNetwork + '.json');
+
+    fs.existsSync(existingNetworkPath).should.be.false;
+  });
+
   it('should throw if artifacts directory is invalid', () => {
     const invalidArtifactsPath = 'invalid/path';
 
