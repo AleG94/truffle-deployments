@@ -20,11 +20,11 @@ There are different currents of thought between developers but there are a few u
 - some user-specific `absolute paths` are stored inside every artifact and may cause problems when multiple persons are working on the same codebase
 - `git diffs` become much more difficult and messy to read
 
-But Truffle artifacts also contain the addresses of deployed contracts for each network and they are crucial for migrations in order to work properly.
+But Truffle artifacts also contain the addresses of deployed contracts for each network and these are crucial in order for migrations to work properly.
 
-The solution is to store those addresses in *separate files* and commit them instead of the *build* directory.
+The solution is to store the addresses in *separate files* and commit them instead of the *build* directory.
 
-Later on, another dev working on the same codebase could just clone the repo, compile the contracts and merge the deployment address of each contract back with it's respective artifact file to restore a clean and working state for Truffle.
+Later on, another developer working on the same codebase could just clone the repo, compile the contracts and merge the deployment addresses back into the *artifacts*, thus restoring a clean and working state for Truffle.
 
 
 ## Installation
